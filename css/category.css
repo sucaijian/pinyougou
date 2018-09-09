@@ -1,0 +1,92 @@
+.pyg_view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.pyg_view .left_box {
+  width: 1rem;
+  height: 100%;
+  overflow: scroll;
+}
+
+.pyg_view .left_box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pyg_view .left_box ul li {
+  height: .45rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.16rem;
+}
+
+.pyg_view .left_box ul .active {
+  border-left: 0.05rem solid purple;
+}
+
+.pyg_view .rigth_box {
+  height: 100%;
+  overflow: scroll;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #fff;
+}
+
+.pyg_view .rigth_box .goods_group .goods_title {
+  height: 0.45rem;
+  line-height: 0.45rem;
+  font-size: 0.16rem;
+  color: #0094ff;
+  padding-left: 10px;
+}
+
+.pyg_view .rigth_box .goods_group .goods_content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pyg_view .rigth_box .goods_group .goods_content li {
+  width: 33.33%;
+  margin: 0 auto;
+}
+
+.pyg_view .rigth_box .goods_group .goods_content li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pyg_view .rigth_box .goods_group .goods_content li a img {
+  width: 70%;
+}
+
+.pyg_view .rigth_box .goods_group .goods_content li a img p {
+  font-size: 0.13rem;
+  color: #000;
+}
+/*# sourceMappingURL=category.css.map */

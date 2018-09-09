@@ -3,7 +3,8 @@ img {
   width: 100%;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 

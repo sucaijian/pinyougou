@@ -2,8 +2,9 @@ img{
     display:block;
     width:100%;
 }
-html{
-    height: 100%;
+html,
+body{
+    height: 100%; //一定要设置高度100%
 }
 body{
    padding:45px 0 53px;

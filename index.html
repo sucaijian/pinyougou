@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- 理想视口 -->
@@ -7,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>品优购首页</title>
     <!-- 引入mui 原生UI组件的css样式 -->
-    <link rel="stylesheet" href="./lib/mui/css/mui.css"> 
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <!-- 引入一套绝佳的图标字体库字体css样式 -->
     <link rel="stylesheet" href="./lib/fontawesome/css/font-awesome.css">
     <!-- 引入公共部分css样式 -->
@@ -15,6 +16,7 @@
     <!-- 引入当前页面的css样式 -->
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
     <!-- 头部 -->
     <header class="pyg_search">
@@ -23,19 +25,68 @@
         </div>
     </header>
 
+    <!-- 轮播图 -->
+    <div class="pyg_view">
+        <div class="mui-slider">
+            <!-- <div class="mui-slider-group mui-slider-loop">
+             
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://pdydxvpol.bkt.clouddn.com/banner3.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="http://pdydxvpol.bkt.clouddn.com/banner1.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="http://pdydxvpol.bkt.clouddn.com/banner2.png" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="http://pdydxvpol.bkt.clouddn.com/banner3.png" /></a></div>
+               
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://pdydxvpol.bkt.clouddn.com/banner1.png" /></a></div>
+            </div>
+           
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- 首页导航 -->
+    <div class="pyg_nav">
+        <!-- <a href="#">
+            <img src="http://pdydxvpol.bkt.clouddn.com/icon_index_nav_4@2x.png" alt="">
+        </a> -->
+
+    </div>
+
+    <!-- 商品列表 -->
+    <div class="pyg_list">
+        <!-- <div class="goods_grounp">
+            <div class="gg_title">
+                <img src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt="">
+            </div>
+            <ul class="goods_list">
+                <li>
+                    <a href="#" class="goods_info">
+                        <img src="http://image3.suning.cn/uimg/b2c/newcatentries/0070177075-000000000826129327_1_400x400.jpg"
+                            alt="">
+                        <div class="goods_name">安满(Anmum) 智孕宝 孕妇 妈妈配方奶粉800克 罐装 新西兰原装进口</div>
+                        <div class="goods_price">￥10</div>
+                    </a>
+                    <a href="#" class="goods_like   mui-btn mui-btn-primary mui-btn-outlined">找相似</a>
+                </li>
+
+
+            </ul>
+    </div> -->
+    </div>
 
 
 
 
 
-    
     <!-- 底部 -->
     <footer class="pyg_foot">
-        <a href="#">
+        <a href="index.html">
             <span class="fa fa-home"></span>
             <p>首页</p>
         </a>
-        <a href="#">
+        <a href="./pages/category.html">
             <span class="fa fa-list-ul"></span>
             <p>分类</p>
         </a>
@@ -49,7 +100,73 @@
         </a>
 
     </footer>
+    <!-- 模板部分 -->
+    <!-- 轮播图 -->
+    <script id="sliderTpl" type="text/html">
 
+        <div class="mui-slider-group mui-slider-loop">
+              
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{arr[arr.length-1].image_src}}" /></a></div>
+                {{each arr value index}}
+                <div class="mui-slider-item"><a href="#"><img src="{{value.image_src}}" /></a></div>
+                {{/each}}
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{arr[0].image_src}}" /></a></div>
+              
+            </div>          
+            <!-- 索引器 -->
+            <div class="mui-slider-indicator">
+               
+                    {{each arr value index}}
+                    {{if index==0}}
+                    <div class="mui-indicator mui-active"></div>
+                    {{/if}}
+                    {{if index!=0}}
+                    <div class="mui-indicator"></div>   
+                    {{/if}}
+                    {{/each}}
+                </div>
+
+
+
+</script>
+
+    <!-- 导航 -->
+    <script id="navTpl" type="text/html">
+        {{each arr value index}}
+    <a href="#">
+            <img src="{{value.image_src}}" alt="">
+        </a>
+    {{/each}}
+</script>
+    <!-- 商品列表 -->
+    <script id="goodsTpl" type="text/html">
+        {{each arr value index}}
+    <div class="goods_grounp">
+            <div class="gg_title">
+                <!-- 大标题 -->
+                <img src="{{value.group_img}}" alt="">
+            </div>
+                <!-- 商品 -->
+            <ul class="goods_list">
+                {{each value.goods value2 index2}}
+                <li>
+                    <a href="#" class="goods_info">
+                        <img src="{{value2.goods_big_logo}}"
+                            alt="">
+                        <div class="goods_name">{{value2.goods_name}}</div>
+                        <div class="goods_price">￥{{value2.goods_price}}</div>
+                    </a>
+                    <a href="#" class="goods_like  mui-btn mui-btn-primary mui-btn-outlined">找相似</a>
+                </li>
+                {{/each}}
+            </ul>
+    </div>
+    {{/each}}
+
+</script>
+    <!-- 模板结束 -->
 
 
 
@@ -59,12 +176,12 @@
 <!-- 引入ui组件的js -->
 <script src="./lib/mui/js/mui.js"></script>
 <!-- 引入渲染模板js -->
-<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/arttemplate/template-web.js"></script>
 <!-- 引入zepto Zepto是一个轻量级的针对现代高级浏览器的JavaScript库 -->
 <script src="./lib/zepto/zepto.js"></script>
 <!-- 引入公共部分js -->
 <script src="./js/commonality.js"></script>
 <!-- 引入当前页面的js -->
-<script class="./js/index.js"></script>
+<script src="./js/index.js"></script>
 
 </html>
