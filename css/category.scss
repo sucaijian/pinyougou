@@ -1,3 +1,6 @@
+body{
+  font-size: 0.16rem;
+}
 .pyg_view {
   display: flex;
   height: 100%; //一定要设置高度100%
@@ -5,7 +8,7 @@
   .left_box {
     width: 1rem;
     height: 100%; //一定要设置高度100%
-    overflow: scroll;
+    overflow: hidden;
 
     ul {
       list-style: none;
@@ -17,18 +20,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 0.16rem;
+        font-size: 0.12rem;
+        
       }
 
       .active {
         border-left: 0.05rem solid purple;
+        background-color: #fff;
       }
     }
   }
 
-  .rigth_box {
+  .right_box {
     height: 100%; //一定要设置高度100%
-    overflow: scroll;
+    overflow: hidden;
     flex: 1;
     background-color:#fff;
 
@@ -38,7 +43,7 @@
         line-height: 0.45rem;
         font-size: 0.16rem;
         color: #0094ff;
-        padding-left: 10px;
+        padding-left: 0.1rem;
       }
 
       .goods_content {

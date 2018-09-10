@@ -28,56 +28,39 @@
         <!-- 左侧菜单 -->
         <div class="left_box">
             <ul class="pyg_menu">
-                <li class="active">大家电</li>
-                <li>热门推荐</li>
+                <!-- <li class="active">大家电</li>
+                <li>热门推荐</li> -->
             </ul>
         </div>
         <!-- 右侧菜单 -->
-        <div class="rigth_box">
-           <div class="goods_group">
-               <div class="goods_title">电视</div>
-               <ul class="goods_content">
-                 <li>
-                    <a href="#">
-                        <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg" alt="">
-                        <p>曲面电视</p>
-                    </a>
-                 </li>
-                 <li>
-                    <a href="#">
-                        <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg" alt="">
-                        <p>曲面电视</p>
-                    </a>
-                 </li>
-                 <li>
-                    <a href="#">
-                        <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg" alt="">
-                        <p>曲面电视</p>
-                    </a>
-                 </li>
-               </ul>
-               <div class="goods_title">电视</div>
-               <ul class="goods_content">
-                 <li>
-                    <a href="#">
-                        <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg" alt="">
-                        <p>曲面电视</p>
-                    </a>
-                 </li>
-                 <li>
-                    <a href="#">
-                        <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg" alt="">
-                        <p>曲面电视</p>
-                    </a>
-                 </li>
-                 <li>
-                    <a href="#">
-                        <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg" alt="">
-                        <p>曲面电视</p>
-                    </a>
-                 </li>
-               </ul>
-           </div>
+        <div class="right_box">
+
+            <!-- <div class="goods_title">电视</div>
+                <ul class="goods_content">
+                    <li>
+                        <a href="#">
+                            <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
+                                alt="">
+                            <p>曲面电视</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
+                                alt="">
+                            <p>曲面电视</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://pdydxvpol.bkt.clouddn.com/full/2fb113b32f7a2b161f5ee4096c319afedc3fd5a1.jpg"
+                                alt="">
+                            <p>曲面电视</p>
+                        </a>
+                    </li>
+                </ul> -->
+
+
         </div>
     </div>
 
@@ -106,22 +89,56 @@
 
 </body>
 <!-- 渲染模板开始 -->
+<!-- 左侧菜单 -->
 <script id="leftTpl" type="text/html">
     {{each arr value index}}
-    <li class="active">大家电</li>
-    <li>热门推荐</li>
+    {{if index==0}}
+    <li class="active">{{value.cat_name}}</li>
+    {{/if}}
+    {{if index!=0}}
+    <li>{{value.cat_name}}</li>
+    {{/if}}
+    {{/each}}
 
 </script>
+
+<!-- 右侧菜单 -->
+<script id="rightTpl" type="text/html">
+    <div>
+    {{each arr value1 index1}}
+    <div class="goods_group">
+    <div class="goods_title">{{value1.cat_name}}</div>
+    <ul class="goods_content">
+        {{each value1.children value2 index2}}
+      <li>
+         <a href="#">
+             <img src="{{value2.cat_icon}}" alt="">
+             <p>{{value2.cat_name}}</p>
+         </a>
+      </li>
+      {{/each}}
+    </ul>
+</div>
+{{/each}}
+
+</div>
+</script>
+
+
+
 <!-- 渲染模板结束 -->
 <!-- 引入ui组件的js -->
 <script src="../lib/mui/js/mui.js"></script>
 <!-- 引入渲染模板js -->
-<script src="../lib/mui/js/mui.js"></script>
+<script src="../lib/arttemplate/template-web.js"></script>
 <!-- 引入zepto Zepto是一个轻量级的针对现代高级浏览器的JavaScript库 -->
 <script src="../lib/zepto/zepto.js"></script>
 <!-- 引入公共部分js -->
 <script src="../js/commonality.js"></script>
 <!-- 引入当前页面的js -->
 <script src="../js/category.js"></script>
+<!-- 引入滚动条效果 -->
+<script src="../lib/iscroll/iscroll.js"></script>
+
 
 </html>

@@ -1,3 +1,7 @@
+body {
+  font-size: 0.16rem;
+}
+
 .pyg_view {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,7 +12,7 @@
 .pyg_view .left_box {
   width: 1rem;
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .pyg_view .left_box ul {
@@ -28,31 +32,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.16rem;
+  font-size: 0.12rem;
 }
 
 .pyg_view .left_box ul .active {
   border-left: 0.05rem solid purple;
+  background-color: #fff;
 }
 
-.pyg_view .rigth_box {
+.pyg_view .right_box {
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   background-color: #fff;
 }
 
-.pyg_view .rigth_box .goods_group .goods_title {
+.pyg_view .right_box .goods_group .goods_title {
   height: 0.45rem;
   line-height: 0.45rem;
   font-size: 0.16rem;
   color: #0094ff;
-  padding-left: 10px;
+  padding-left: 0.1rem;
 }
 
-.pyg_view .rigth_box .goods_group .goods_content {
+.pyg_view .right_box .goods_group .goods_content {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -63,12 +68,12 @@
       flex-wrap: wrap;
 }
 
-.pyg_view .rigth_box .goods_group .goods_content li {
+.pyg_view .right_box .goods_group .goods_content li {
   width: 33.33%;
   margin: 0 auto;
 }
 
-.pyg_view .rigth_box .goods_group .goods_content li a {
+.pyg_view .right_box .goods_group .goods_content li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,11 +86,11 @@
           align-items: center;
 }
 
-.pyg_view .rigth_box .goods_group .goods_content li a img {
+.pyg_view .right_box .goods_group .goods_content li a img {
   width: 70%;
 }
 
-.pyg_view .rigth_box .goods_group .goods_content li a img p {
+.pyg_view .right_box .goods_group .goods_content li a img p {
   font-size: 0.13rem;
   color: #000;
 }
